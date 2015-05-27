@@ -1,0 +1,70 @@
+product = {
+    "name": "Pure Energy",
+    "Brand": "MCtwo = Energy",
+    "nutritionLabel": {
+        "valueServingsPerContainer": "1",
+        "valueServingUnitQuantity": 20,
+        "valueServingSizeUnit": "grams",
+        "valueCalories": 180,
+        "valueFatCalories": 0,
+        "valueTotalFat": 18,
+        "valuePolyFat": 0.1,
+        "valuesatFat": 12.9,
+        "valueTransFat": 0,
+        "valueCholesterol": 34.3,
+        "valueSodium": 56,
+        "valueTotalCarb": 1.5,
+        "valueSugars": 0,
+        "valueFibers": 1,
+        "valueProteins": 0,
+        "valueVitaminA": 6.9,
+        "valueVitaminC": 0,
+        "valueCalcium": 0,
+        "valueIron": 1,
+        "ingredientList": "100% Grass-Fed Ghee, Medium Chain Triglyceride Oil, Cacao Powder, Pure Vanilla Powder (Maltodextrin, Vanilla Extract) Stevia (Purified Water, Organic Stevia Leaf Extract, Natural Flavors), Cinnamon, Saffron"
+    },
+    "allergens": {
+        "milk": "None",
+        "eggs": "None",
+        "fish": "None",
+        "shellfish": "None",
+        "treenuts": "None",
+        "wheat": "None",
+        "soybeans": "None",
+        "manufactured": "Manufactured in a home kitchen that also contains: milk, eggs, fish, shellfish, treenuts, wheat, soybeans"
+    },
+    "product": {
+        "productdescription": "It's a versatile and concentrated energy cube. Formulated for quick digestion and energy, Cacao Ghee can be eaten plain, spread on snacks or blended into coffee or other beverages. Let your imagination run wild!",
+        "made": "Made in a Home Kitchen",
+        "productHighlights": [
+            "Soy Free",
+            "Lactose Free",
+            "Gluten Free",
+            "100% Grass-Fed"
+        ],
+        "productCategory": "Snack",
+        "suggestedPriceperunit": "$1.25",
+        "offerCount": "0",
+        "successfulOrders": "None"
+    },
+    "userinfo": {
+        "username": "Fitfoodsbydoc",
+        "contactinfo": {
+            "facebook": "wantfood.co",
+            "twitter": "wantfood.co",
+            "instagram": "wantfood.co",
+            "pinterest": "wantfood.co",
+            "state": "NewJersey"
+        },
+        "credentials": [
+            "Wantfood.co Food Safety Certified",
+            "BSMicrobiology",
+            "DoctorofPodiatricMedicine"
+        ],
+        "otherproducts": "None",
+        "about": "After developing MCTwo=Energy Pure Energy, Fitfoodsbydoc wanted to spread the word and availability of this tried-and-true artisanal recipe, thus Wantfood.co was founded in 2015 with its inaugural product as a one-stop shop for artisanal foodmakers to spread the word about their products",
+        "sex": "Female",
+        "birthdate": "August 9 1988",
+        "makingsince": "3/1/2015"
+    }
+}
