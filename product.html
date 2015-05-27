@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="nutritionLabel-min.css" />
+<link rel="stylesheet" href="main.css" />
+<script src="jquery-1.8.2.min.js"></script>
+<script src="nutritionLabel-min.js"></script>
+<script src="product.json"></script>
+<body>
+<nav>
+<a id="navToggle" href="#" class="fa fa-bars"></a>
+<ul id="pageLinks">
+<li class="fa fa-spoon"><a href="#overview">Overview</a></li>
+<li class="fa fa-list-ul"><a href="#highlights">Highlights</a></li>
+<li class="fa fa-list-alt"><a href="#nutrition">Nutrition</a></li>
+<li class="fa fa-question"><a href="#questions">Questions</a></li>
+<li class="fa fa-info"><a href="#brand">Brand info</a></li>
+<li class="fa fa-comments"><a href="#social">Social</a></li>
+</ul>
+<ul id="siteLinks">
+<li class="fa fa-heart"><a href="http://github.com/wantfood/wiki/FAQ">About</a></li>
+<li class="fa fa-cutlery"><a href="mailto:make@wantfood.co">Make your own</a></li>
+<li class="fa fa-user"><a href="#">Logout</a></li>
+</ul>
+</nav>
+<div id="reel">
+<img src="https://dofwja.dm2301.livefilestore.com/y2p7s8YkY8qiuVawDCaeCmyZ_unMvl7ahqQ245N7QS7yqbpDOAXynsbpDiTMK4KkuJF_MMyRTt1NC1dzK819Mwz22Vw57xbT0AqPRa8ErSU2_mmU2b5uuYPLjKgiksvpxDBMv06PHOYvixPkp-ulhgOHh8OCxlEP6v2yuAjd_jpf0A/20150524_103447.jpg?psid=1" />
+<img src="https://dofwja.dm2301.livefilestore.com/y2pPgqEVHr-_13n4XkjJvrt3cDa1UbQ-WuJLP_evHxHKcKlNu6HterFLiut4TEfYFUEhkmJp0U5GzkMRNVgDyynfx5Tct8cKLTfbjiJEtVl9IHkeOLtIwsbBNWurwDCY2ZvLXPyxgWrTwJqrgzVgjQt2EpBAFQmdoFbogBPcGoXSKo/20150524_103516.jpg?psid=1" />
+<img src="https://dofwja.dm2301.livefilestore.com/y2pMvEFrODlRw_NHFrWGZyFecpaqXq1ZfqpUUGRQ6Ds6-F5FQcro513KvbOiamYwzJFy4pK3gibrqe_P6FM5yHdn5_gumsCF38CX5QyFGBO_ya1IujOtraY9oZSECB4GQdrf9bcoz_Q-1cLOcXlLnIqf-s-Bit-kHPrN1gx28o7tPc/image2.jpg?psid=1" />
+</div>
+<section id="banner">
+<img id="big" src="https://dofwja.dm2301.livefilestore.com/y2po_nE40RR38c66IvZJgiAvkKoopbvQlQ4W1YAvVzBeC1Z7VihlE_uRIzx7n4WKRbnO9m2-JUh0sY7cXw3JNYVdYf5ww91zFcHWXTfP-1HJ_vxh7Kya5pKxsXfQ_Kf-NjxQga3sy_3lhgreAj06pmQ6HXkHIZFg9yEEiMAhcgBlF0/drink.JPG?psid=1" />
+</section>
+<div id="title">
+  <h1>Pure energy</h1>
+  <span id="titleStrut"></span>
+</div>
+<a id="want" href="#" onclick="$('body').toggleClass('wanting');return false">want</a>
+<form id="wantform" method="post" target="">
+<p id="offer">
+<input name="quantity" type="text" placeholder="#" size="1" />
+cubes
+for
+<span id="price">
+<span class="currency">$</span>
+<input name="price" type="text" placeholder="total" size="3" />
+</span>
+within
+<select name="deadline">
+<option value="" required>arrival time</option>
+<option value="7">a week</option>
+<option value="14">two weeks</option>
+<option value="30">a month</option>
+<option value="any">some time</option>
+</select>
+to
+<input name="zip" type="text" placeholder="zip code" size="6" />
+,
+<input name="email" type="email" placeholder="email" size="5" />
+<input type="submit" class="fa" value="&#xf004;" />
+</p>
+<div id="assurance">
+<ul>
+<li>Free shipping
+<li>no commitment
+<li>no payment info
+</ul>
+<a href="http://github.com/wantfood/wiki/FAQ">FAQ</a></p> 
+</div>
+</form>
+<p id="tagline">The power of MCTs in a delicious, convenient cube.</p>
+<section id="description">
+<p>MCᵀᵂᴼ cubes were created to optimally combine the potent health benefits of MCT oil with the rich taste of 100% Grass-Fed Ghee. It is a versatile, concentrated and stimulant free energy source that can be eaten plain, spread on snacks, blended into coffee or any other beverage. The energy cube contains powerful antioxidants from raw, undutched cacao powder and is sweetened with Clear Stevia®.
+<p>MCTs, also known as Medium Chain Triglycerides, are an energy source that, unlike carbohydrates and even "good fats", are quickly and directly burned for energy rather than stored as body fat. MCTs have gained popularity among numerous communities including low-carb dieters, endurance athletes and those interested in cognitive improvement.
+<p>Energy cubes come individually packaged in portable environmentally friendly packaging. 
+</section>
+<div id="relief">
+<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend
+fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+</div>
+<section id="details">
+<ul id="highlights">
+<li>Soy Free
+<li>Lactose Free
+<li>Gluten Free
+<li>100% Grass-Fed
+<li>Paleo and Primal friendly
+<li>Ships from Pittsburgh, PA
+</ul>
+<div id="nutrition"></div>
+<script>
+$('#nutrition').nutritionLabel($.extend(
+	{
+		showServingUnitQuantityTextbox : false,
+		showServingUnitQuantity : true,
+		hideTextboxArrows : true,
+		allowCustomWidth : true,
+		widthCustom: 'auto',
+		showItemName : false,
+	 	showServingsPerContainer : true},
+	product.nutritionLabel));
+</script>
+</section>
+<section id="brand">
+<img id="logo" src="logo.png" />
+<p>Aenean non massa sapien. In hac habitasse platea dictumst. Maecenas sodales purus et nulla sodales aliquam. Aenean ac porttitor metus. In hac habitasse platea dictumst. Phasellus blandit turpis in leo scelerisque mollis. Nulla venenatis ipsum nec est porta rhoncus. Mauris sodales sed pharetra nisi nec consectetur. Cras elit magna, hendrerit nec consectetur in, sollicitudin vitae justo. Cras amet aliquet Aliquam ligula turpis, feugiat id fermentum malesuada, rutrum eget turpis. Mauris sodales sed pharetra nisi nec consectetur. Cras elit magna, hendrerit nec consectetur in sollicitudin vitae.</p>
+</section>
+</body>
+</html>
