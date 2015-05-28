@@ -394,7 +394,7 @@ section#description {
     line-height: 150%;
 }
 
-a#navToggle:hover {
+nav:hover #navToggle {
     background-color: rgba(210, 159, 99, 0.2);
 }
 
@@ -548,4 +548,27 @@ section#details {
     /* display: flex; */
     /* flex-direction: column; */
     /* align-items: center; */
+}
+
+ul#highlights {
+    padding: 0px;
+    -webkit-column-width: 200px;
+}
+
+img#logo {
+    width: 200px;
+    display: inline;
+    float: left;
+}
+
+div#navLinks {
+    display: none;
+}
+
+nav:hover #navLinks {
+    display: block;
+}
+
+#navLinks:hover {
+    /* display: block; */
 }
