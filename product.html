@@ -6,6 +6,36 @@
 <link rel="stylesheet" href="main.css" />
 <script src="jquery-1.8.2.min.js"></script>
 <script src="nutritionLabel-min.js"></script>
+<script type="text/javascript">
+var scrollPos = 0;
+var wantPos = 0;
+var body;
+
+function scrollListener() { 
+	if (scrollPos >= wantPos) {
+		body.addClass("scrolled");
+	}
+	else { 
+		body.removeClass('scrolled');
+	}
+}
+
+function resizeListener() {
+	wantPos = $("#want").position().top;
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	body = $("body");
+	
+	resizeListener();
+	$(window).resize(resizeListener);
+	
+	$(window).scroll(function() {  
+		scrollPos = $(window).scrollTop();
+		requestAnimationFrame(scrollListener);
+	});
+});
+</script>
 <script src="http://www.wantfood.co/mctwo/cubes/product.json"></script>
 <body>
 <nav id="navigation">
@@ -26,10 +56,13 @@
 </ul>
 </div>
 </nav>
-<div id="reel">
-<img src="http://www.wantfood.co/mctwo/cubes/image2.jpg" />
-<img src="http://www.wantfood.co/mctwo/cubes/image3.jpg" />
-</div>
+<ul id="reel">
+<li><img src="http://www.wantfood.co/mctwo/cubes/image1.jpg" />
+<li class="selected"><img src="http://www.wantfood.co/mctwo/cubes/image2.jpg" />
+<li><img src="http://www.wantfood.co/mctwo/cubes/image3.jpg" />
+<li><img src="http://www.wantfood.co/mctwo/cubes/image4.jpg" />
+
+</ul>
 <section id="banner">
 <img id="big" src="http://www.wantfood.co/mctwo/cubes/image1.jpg" />
 </section>
