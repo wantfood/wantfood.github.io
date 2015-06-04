@@ -54,7 +54,7 @@ body {
 }
 
 	body, input, select, textarea {
-		font-family: "Droid Serif", serif;
+		font-family: "Open Sans", sans-serif;
 		font-size: 15pt;
 		color: #1B0C07;
 }
@@ -293,6 +293,10 @@ nav a, #want {
 #banner {
 		overflow: hidden;
 		min-height: 200px;
+		background: url('http://www.wantfood.co/mctwo/cubes/image4.jpg');
+		background-position: center center;
+		background-size: cover;
+		-webkit-filter: blur(0px);
 }
 
 #big {
@@ -331,7 +335,7 @@ nav a, #want {
 	}
 	
 	#reel {
-		margin: 0;
+		margin: 0px 0px -50px 0px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -362,39 +366,64 @@ nav a, #want {
 	}
 	
 	#reel .selected {
-		width: 120px;
-		visibility: hidden;
+		/* width: 120px; */
+		/* visibility: hidden; */
 	}
 	
 	#reel li:not(.selected) {
-		position: relative;
-		left: -40px;
+		/* position: relative; */
+		/* left: -40px; */
 	}
 	
 	#reel .selected ~ li {
-		left: 40px;
+		/* left: 40px; */
 	}
 	
 	#banner {
-		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("http://www.wantfood.co/mctwo/cubes/image1.jpg");
+		/*background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("http://www.wantfood.co/mctwo/cubes/image1.jpg");
 		background-position: center middle;
-		background-size: cover;
-		transition: background 0.5s;
+		background-size: cover;*/
+		transition: -webkit-filter 0.5s;
 	}
 	
-	#banner img {
+	/*#banner img {
 		visibility: hidden;
-	}
+	}*/
 	
 	.scrolled #banner {
-		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://www.wantfood.co/mctwo/cubes/image1.jpg");
+		/*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://www.wantfood.co/mctwo/cubes/image1.jpg");
 		background-position: center middle;
+		background-size: cover;*/
+		/* opacity: 0.5; */
+	
+		/* -webkit-filter: brightness(0.5) drop-shadow(0px 0px 10px black); */
+		background: black url('http://www.wantfood.co/mctwo/cubes/image4.jpg');
 		background-size: cover;
-	}
+		background-position: center center;
+		-webkit-filter: blur(3px);
+}
 	
 	.scrolled #want {
 		position: fixed;
 		top: 0;
+	}
+	
+	#tagline, #description { 
+		transition: opacity 1s, background-color 1s;
+	}
+	
+	.scrolled #tagline, .scrolled #description, #highlights, #nutrition { 
+		opacity: 1;
+		background-color: rgba(255, 255, 255, 0.8);
+		color: black;
+	}
+	
+	nav ul, nav a {
+		/* transition: color 0.5s; */
+	}
+	
+	.scrolled nav ul, .scrolled nav a {
+		/* color: black; */
 	}
 }
 
@@ -434,6 +463,7 @@ nav a, #want {
 
 .wanting #wantform {
     display: block;
+    /* position: relative; */
 }
 
 .wanting #want {
@@ -512,16 +542,55 @@ input[type=text], input[type=email], select, #price {
     */
 
     #big {
+        /* opacity: 0.5; */
         animation: pan 240s linear infinite alternate;
 		backface-visibility: hidden;
-    }
+    
+        visibility: hidden;
+}
 	
 	#description { 
 		margin-top: 100vh;
 	
-		padding: 0px 50px !important;
-		line-height: 160% !important;
-		font-size: 90%;
+		padding: 20px 30px 20px 30px !important;
+		line-height: 170% !important;
+		font-size: 70%;
+		/* padding-bottom: 50px; */
+		-webkit-columns: 2;
+		text-align: left;
+		-webkit-column-gap: 28px;
+		/* border-top: 1px solid gray; */
+		/* margin-left: 20px !important; */
+		/* border-color: gray rgba(0,0,0,0.4) gray rgba(0,0,0,0); */
+		/* border-width:  1px 30px 0px 30px; */
+		/* border-style:  solid; */
+		position: relative;
+}
+
+#description p {
+    margin-top: 0px;
+    /* line-height: 110%; */
+}
+
+#description:before {
+	content: ' ';
+	position: absolute;
+	display: block;
+	/* height: 1px; */
+	/* background-color: rgba(0,0,0,0.1); */
+	/* margin: 2px 30px 20px 2px; */
+	/* -webkit-column-count: 1; */
+	/* width: 90%; */
+	
+	left: 0;
+	right: 0;
+	margin: 0px 30px 0px 30px;
+	top: 0;
+	/* width: 500px; */
+	/* display: flex; */
+	/* justify-content: center; */
+	/* margin: 0px 20px 0px 76px; */
+	border-top: 1px solid rgba(50,50,50,0.14);
 }
 }
     	
@@ -627,10 +696,13 @@ input[type=text], input[type=email], select, #price {
 		margin-right: auto;
 		opacity: 0.7;
 		background-color: rgba(0,0,0,0.4);
-		width: 740px;
+		width: 780px;
 		color: white;
 		font-family: "open sans";	
-	}
+	
+		/* -webkit-columns: 2; */
+		/* background-color: rgba(255,255,255,0.7); */
+}
 }
 
 #titleStrut {
@@ -695,7 +767,48 @@ input[type="submit"] {
     padding: 0;
 }
 
-div#relief {
+#highlights li {
+    /* margin-bottom: 15px; */
+    font-size: 80%;
+    /* padding-bottom: 8px; */
+    /* border-bottom: 1px solid rgba(0,0,0,0.3); */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+#highlights li + li {
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+#highlights li + li:before {
+    /* content: ' '; */
+    /* display: block; */
+    /* border-top: 1px dotted rgba(50,50,50,0.5); */
+    /* padding: 10px 0px 10px; */
+}
+
+#highlights li:after {
+    /* margin-bottom: 10px; */
+    content: '\2611';
+    /* opacity: 0.5; */
+    /* margin-right: 5px; */
+    /* float: right; */
+    text-align: right;
+}
+
+@media screen and (max-width: 750px) {
+	section#details {
+		/* -webkit-column-width: 300px; */
+		margin: 6px;
+		/* display: flex; */
+		/* flex-direction: column; */
+		/* align-items: center; */
+	}
+	
+	#relief {
     background-image: url('http://stanschaap.com/wp-content/uploads/images/Wet-Meadow-in-Winter-With-Cattle.jpg');
     width: 100%;
     background-size: cover;
@@ -713,25 +826,77 @@ div#relief {
     font-size: 110%;
     font-style: italic;
 }
-
-#highlights li {
-    margin-bottom: 15px;
-    font-size: 80%;
 }
-
-#highlights li:before {
-    /* margin-bottom: 10px; */
-    content: '\2611';
-    opacity: 0.5;
-    margin-right: 5px;
+@media screen and (min-width: 750px) {
+	#details {
+		margin: auto;
+		width: 780px;
+	
+		display: flex;
+		justify-content: center;
+		/* -webkit-columns: 2; */
+		justify-content: space-between;
+		/* padding: 20px; */
+		margin-bottom: 300px;
 }
-
-section#details {
-    /* -webkit-column-width: 300px; */
-    margin: 6px;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
+	
+	#highlights {
+		/* display: inline-block; */
+		margin: 0px 0px 0px 0px;
+		padding: 20px 20px 20px 20px !important;
+		/* flex-grow: 1; */
+		/* font-family: arial; */
+		order: 2;
+		width: 386px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		/* display: table-column; */
+}
+	
+	#nutrition {
+		/* display: inline-block; */
+		/* float: right; */
+		width: 386px;
+		/* transform: scale(0.6); */
+		/* transform-origin: top right; */
+		/* margin-left: -200px; */
+	
+		order: 1;
+		padding: 20px;
+		/* display: inline; */
+		/* height: auto; */
+}
+	
+	.nutritionLabel {
+		margin-bottom: 0px;
+		border: 0;
+	
+		/* width: 580px; */
+		/* transform: scale(0.54); */
+		/* transform-origin: top left; */
+		padding: 0;
+		font-size: 50%;
+}
+	
+	#relief {
+    margin: auto;
+	
+    padding: 80px 80px;
+}
+	
+	#relief p {
+    color: white;
+	
+    /* width: 100%; */
+    text-align: center;
+    font-size: 140%;
+    line-height: 160%;
+    margin: auto;
+    /* font-family: "droid serif"; */
+    font-style: italic;
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+}
 }
 
 ul#highlights {
@@ -741,6 +906,27 @@ ul#highlights {
 
 img#logo {
     width: 200px;
-    display: inline;
-    float: left;
+    display: block;
+    /* text-align: center; */
+    margin: 50px auto 20px auto;
+    opacity: 0.9;
+}
+
+#brand p {
+    display: none;
+}
+
+#brand:before {
+    content: "More from the brand";
+    text-align:  center;
+    width:  100%;
+    display:  block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-shadow: 0px 0px 3px rgba(255,255,255,0.2);
+}
+
+section#brand {
+    margin-top: 200px;
+    display: block;
 }
