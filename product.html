@@ -7,17 +7,29 @@
 <script src="jquery-1.8.2.min.js"></script>
 <script src="nutritionLabel-min.js"></script>
 <script type="text/javascript">
+var prevScrollPos = 0;
 var scrollPos = 0;
 var wantPos = 0;
 var body;
 
 function scrollListener() { 
-	if (scrollPos >= wantPos) {
+	if (scrollPos > 0 && prevScrollPos == 0) {
+		prevScrollPos = scrollPos;
 		body.addClass("scrolled");
 	}
-	else { 
+	else if (scrollPos == 0 && prevScrollPos > 0) { 
+		prevScrollPos = scrollPos;
 		body.removeClass('scrolled');
 	}
+	
+	if (scrollPos >= wantPos && prevScrollPos <= wantPos) {
+		prevScrollPos = scrollPos;
+		body.addClass("wantscrolled");
+	}
+	else if (prevScrollPos > wantPos) { 
+		prevScrollPos = scrollPos;
+		body.removeClass('wantscrolled');
+	}	
 }
 
 function resizeListener() {
@@ -35,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		requestAnimationFrame(scrollListener);
 	});
 });
+
 </script>
 <script src="http://www.wantfood.co/mctwo/cubes/product.json"></script>
 <body>
@@ -64,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 </ul>
 <section id="banner">
-<img id="big" src="http://www.wantfood.co/mctwo/cubes/image1.jpg" />
+<img id="big" src="http://www.wantfood.co/mctwo/cubes/image4.jpg" />
 </section>
 <div id="title">
   <h1>Pure energy</h1>
@@ -75,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 <p id="offer">
 <input name="quantity" type="text" placeholder="#" size="1" />
 cubes
-for
+for at most
 <span id="price">
 <span class="currency">$</span>
 <input name="price" type="text" placeholder="total" size="3" />
@@ -97,11 +110,11 @@ to
 <div id="assurance">
 <ul>
 <li>Free shipping
-<li>equal prices
+<li>equal community price
 <li>no commitment
 <li>no payment info
 </ul>
-<a href="http://github.com/wantfood/wiki/wiki/General-FAQ">FAQ</a></p> 
+<a href="http://github.com/wantfood/wiki/wiki/General-FAQ">FAQ</a> 
 </div>
 </form>
 <p id="tagline">The power of MCTs in a delicious, convenient cube.</p>

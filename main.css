@@ -56,7 +56,7 @@ body {
 	body, input, select, textarea {
 		font-family: "Open Sans", sans-serif;
 		font-size: 15pt;
-		color: #1B0C07;
+		color: #D6CBAD;
 }
 
 nav {
@@ -245,11 +245,13 @@ nav a, #want {
     top: 0px;
     width: 100%;
     padding: 6px 6px 0px 6px;
+    display: none;
 }
 
 #banner {
 	max-height: 450px;
-	border-bottom: 2px solid #1B0C07;
+	border-bottom: 2px solid black;
+	overflow: hidden;      min-height: 200px;
 }
 
 	div#title {
@@ -279,6 +281,8 @@ nav a, #want {
 	position: fixed;
 	top: 0;
 	z-index: -1;
+	background: url('http://www.wantfood.co/mctwo/cubes/image4.jpg');
+	background-position: center center;      background-size: cover;      -webkit-filter: blur(0px);
 }
 
 #title {
@@ -291,12 +295,12 @@ nav a, #want {
 }
 
 #banner {
-		overflow: hidden;
-		min-height: 200px;
-		background: url('http://www.wantfood.co/mctwo/cubes/image4.jpg');
-		background-position: center center;
-		background-size: cover;
-		-webkit-filter: blur(0px);
+		/* overflow: hidden; */
+		/* min-height: 200px; */
+		/* background: url('http://www.wantfood.co/mctwo/cubes/image4.jpg'); */
+		/* background-position: center center; */
+		/* background-size: cover; */
+		/* -webkit-filter: blur(0px); */
 }
 
 #big {
@@ -320,15 +324,19 @@ nav a, #want {
 
 @media screen and (min-width: 750px) {
 
-	#want, #reel {
+	#want, #reel, #wantform {
 		position: absolute;
 		bottom: 180px;
 		margin-left: auto;
 		margin-right: auto;
 		left: 0;
 		right: 0;
-		height: 50px;
+		/* height: 50px; */
 	}
+
+#want, #reel {
+    height: 50px;
+}
 	
 	#want {
 		width: 120px;
@@ -341,6 +349,10 @@ nav a, #want {
 		justify-content: center;
 	
 		padding: 0;
+}
+
+.wanting #reel {
+    display: none;
 }
 	
 	
@@ -403,7 +415,7 @@ nav a, #want {
 		-webkit-filter: blur(3px);
 }
 	
-	.scrolled #want {
+	.wantscrolled #want {
 		position: fixed;
 		top: 0;
 	}
@@ -435,6 +447,7 @@ nav a, #want {
 	align-items: center;
 	transition: border-radius 0.2s ease-in-out;
 	background-color: #ed4933;	
+	border-radius: 3px;
 }
 
 #want:hover {
@@ -442,56 +455,27 @@ nav a, #want {
 }
 
 #wantform {
-    display: none;
-    padding-left: 8px;
-    background-color: #ed4933;
-    z-index: 1;
-    /* position: relative; */
-    /* top: -8px; */
-    padding-top: 16px;
-    color: white;
-    position: absolute;
-    width: 100%;
-    /* margin-top: 2px; */
-    padding-bottom: 25px;
-    /* border-right: 6px solid transparent; */
-    /* box-sizing: content-box; */
-    right: 6px;
-    /* display: flex; */
-    border-left: 6px solid transparent;
-}
-
-.wanting #wantform {
-    display: block;
-    /* position: relative; */
+    visibility: hidden;
+    /* display: none; */
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 4;
+	color: white;
+    border-radius: 0px 0px 1px 1px;
+    -webkit-filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.1));
+    transition: opacity 0.5s;
+    opacity: 0;
 }
 
 .wanting #want {
-    /* border-bottom: none !important; */
-    /* margin-right: 0px; */
-    /* bottom: 0px; */
-    /* bottom: -2px; */
     border-radius: 0px;
-    /* padding-right: 6px; */
-    /* padding-bottom: 12px; */
-    /* box-sizing: content-box; */
-    /* padding-top: 6px; */
-    /* position: relative; */
-    /* top: 2px; */
-    /* right: 0px; */
-    /* padding-right: 6px; */
-    /* border-width: 2px 2px 0px 2px; */
-    /* border-color: #1B0C07 #1B0C07 transparent #1B0C07; */
-    /* border-style: solid; */
-    /* box-sizing: content-box; */
     padding-top: 4px;
-    /* margin-right: -2px; */
     padding-bottom: 4px;
-    /* margin-top: -58px; */
-    /* background-color: #402A1A; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 780px;
+    /* background-color: rgba(200,0,0,0.4); */
+    /* height: 25px; */
 }
 
 #offer {
@@ -501,7 +485,7 @@ nav a, #want {
 
 input[type=text], input[type=email], select, #price {
 	background-color: transparent;
-	border-bottom: 1px dotted rgb(255, 255, 255);
+	border-bottom: 1px dashed rgb(255, 255, 255);
     border-width: 0px 0px 1px 0px;
 }
 
@@ -510,7 +494,7 @@ input[type=text], input[type=email], select, #price {
 }
 
 #price, input::-webkit-input-placeholder, select {
-	color: #1B0C07;
+	color: #A9A9A8;
 }
 
 #assurance {
@@ -520,13 +504,6 @@ input[type=text], input[type=email], select, #price {
     letter-spacing: 0.3px;
 }
 
-
-
-
-#nutrition {
-    /* width: 100%; */
-    /* margin: 6px; */
-}
 
 	
 @media screen and (min-width: 750px) {
@@ -592,6 +569,48 @@ input[type=text], input[type=email], select, #price {
 	/* margin: 0px 20px 0px 76px; */
 	border-top: 1px solid rgba(50,50,50,0.14);
 }
+
+	#wantform {
+		flex-direction: column;
+		align-items: center;
+		width: 780px;
+	
+		margin-bottom: -50px;
+		/* height: 108px; */
+		padding: 10px 0px 10px 0px;
+}
+	
+	.wanting #wantform {
+		display: flex;
+	
+		opacity: 1;
+		visibility: visible;
+}
+
+#offer {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+	
+	.scrolled #wantform {
+		/* position: fixed; */
+		/* top: 0; */
+		/* left: 0; */
+		/* right: 0; */
+		/* margin-left: auto; */
+		/* margin-right: auto; */
+		/* padding-top: 70px; */
+	
+		/* background-color: rgba(255,0,0,0.4); */
+}
+
+	.wanting #want {
+		/* opacity: 0.5; */
+	
+		transition: width 0.8s, height 0.8s;
+		background-color: #000000;
+		visibility: hidden;
+}
 }
     	
 @media screen and (max-width: 750px) {
@@ -618,13 +637,14 @@ input[type=text], input[type=email], select, #price {
         font-size: 70px;
         /* line-height: 0px; */
         color: rgb(255, 255, 255);
-        font-style: italic;
+        /* font-style: italic; */
         line-height: 0px;
         display: inline;
         font-weight: normal;
-        background-color: rgba(97, 81, 66, 0.39);
+        /* background-color: rgba(97, 81, 66, 0.39); */
         padding-left: 6px;
         position: relative;
+        letter-spacing: -0.06em;
 }
 
     #want {
@@ -656,7 +676,7 @@ input[type=text], input[type=email], select, #price {
 }
 
 	#tagline {
-		background-color: rgba(210, 159, 99, 0.2);
+		background-color: rgba(158, 158, 158, 0.38);
 		/* display: inline-block; */
 		padding: 25px 6px 17px 6px;
 		margin: 0px 0 0px 0;
@@ -664,6 +684,24 @@ input[type=text], input[type=email], select, #price {
 		opacity: 0.7;
 		/* font-style: italic; */
 		line-height: 150%;
+	}
+	
+	#wantform {
+		padding-left: 8px;
+		padding-top: 16px;
+		position: absolute;
+		width: 100%;
+		/* margin-top: 2px; */
+		padding-bottom: 25px;
+		/* border-right: 6px solid transparent; */
+		/* box-sizing: content-box; */
+		right: 6px;
+		/* display: flex; */
+		border-left: 6px solid transparent;
+	}
+	
+	.wanting #wantform {
+		display: block;
 	}
 }
 
@@ -703,6 +741,11 @@ input[type=text], input[type=email], select, #price {
 		/* -webkit-columns: 2; */
 		/* background-color: rgba(255,255,255,0.7); */
 }
+
+.wanting:not(.scrolled) #tagline, .wanting:not(.scrolled)  #description {
+    background-color: transparent;
+    /* transition: background-color 0.5s; */
+}
 }
 
 #titleStrut {
@@ -736,9 +779,14 @@ input[type="submit"] {
     background-color: rgba(0, 0, 0, 0.41);
     border: none;
     border-radius: 3px;
-    color: white;
+    color: rgb(255, 255, 255);
     height: 30px;
     cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    color: #f71e36;
+    transition: color 0.3s;
 }
 
 
@@ -757,7 +805,7 @@ input[type="submit"] {
 
 #assurance li + li::before {
     content: '\2022';
-    color: rgba(0,0,0,0.8);
+    color: rgb(173, 173, 173);
     padding: 0px 4px 0px 4px;
 }
 
@@ -825,6 +873,11 @@ input[type="submit"] {
     text-align: center;
     font-size: 110%;
     font-style: italic;
+}
+
+ul#highlights {
+    padding: 0px;
+    -webkit-column-width: 200px;
 }
 }
 @media screen and (min-width: 750px) {
@@ -899,11 +952,6 @@ input[type="submit"] {
 }
 }
 
-ul#highlights {
-    padding: 0px;
-    -webkit-column-width: 200px;
-}
-
 img#logo {
     width: 200px;
     display: block;
@@ -923,7 +971,9 @@ img#logo {
     display:  block;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    text-shadow: 0px 0px 3px rgba(255,255,255,0.2);
+    text-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+    color: white;
+    font-size: 90%;
 }
 
 section#brand {
