@@ -473,16 +473,19 @@ span#titleStrut {
 #offer {
     margin-bottom: 20px;
     line-height: 40px;
+    font-size: 14pt;
 }
 
 input[type=text], input[type=email], select, #price {
 	/* background-color: rgba(0,0,0,0.1); */
 	border-bottom: 1px dashed rgb(255, 255, 255);
     border-width: 0px 0px 1px 0px;
+	/* font-style: italic; */
 }
 
 input:not([name="price"]), select, #price {
     background-color: rgba(0,0,0,0.1); */;
+    /* font-style: italic; */
 }
 
 input[name="price"] {
@@ -580,7 +583,7 @@ input[name="price"] {
 		width: 780px;
 	
 		margin-bottom: -50px;
-		/* height: 108px; */
+		height: 92px;
 		padding: 10px 0px 10px 0px;
 }
 	
@@ -596,16 +599,19 @@ input[name="price"] {
     margin-bottom: 10px;
 }
 	
-	.scrolled #wantform {
-		/* position: fixed; */
-		/* top: 0; */
-		/* left: 0; */
-		/* right: 0; */
-		/* margin-left: auto; */
-		/* margin-right: auto; */
+	.wantscrolled #wantform {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
 		/* padding-top: 70px; */
 	
 		/* background-color: rgba(255,0,0,0.4); */
+		/* height: 30px; */
+		/* display: inline-block; */
+		background-color: rgba(0,0,0,0.75);
 }
 
 	.wanting #want {
