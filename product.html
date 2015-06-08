@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0">
 <link rel="stylesheet" href="nutritionLabel-min.css" />
 <link rel="stylesheet" href="main.css" />
 <script src="jquery-1.8.2.min.js"></script>
@@ -22,11 +23,11 @@ function scrollListener() {
 		body.removeClass('scrolled');
 	}
 	
-	if (scrollPos >= wantPos && prevScrollPos <= wantPos) {
+	if (scrollPos >= wantPos && prevScrollPos < wantPos) {
 		prevScrollPos = scrollPos;
 		body.addClass("wantscrolled");
 	}
-	else if (prevScrollPos > wantPos) { 
+	else if (prevScrollPos > wantPos && scrollPos <= wantPos) { 
 		prevScrollPos = scrollPos;
 		body.removeClass('wantscrolled');
 	}	
@@ -109,7 +110,7 @@ to
 </p>
 <div id="assurance">
 <ul>
-<li>Free shipping
+<li>free shipping
 <li>equal community price
 <li>no commitment
 <li>no payment info
@@ -117,12 +118,14 @@ to
 <a href="http://github.com/wantfood/wiki/wiki/General-FAQ">FAQ</a> 
 </div>
 </form>
+<div id="content">
 <p id="tagline">The power of MCTs in a delicious, convenient cube.</p>
 <section id="description">
 <p>MCᵀᵂᴼ cubes were created to optimally combine the potent health benefits of MCT oil with the rich taste of 100% Grass-Fed Ghee. It is a versatile, concentrated and stimulant free energy source that can be eaten plain, spread on snacks, blended into coffee or any other beverage. The energy cube contains powerful antioxidants from raw, undutched cacao powder and is sweetened with Clear Stevia®.
 <p>MCTs, also known as Medium Chain Triglycerides, are an energy source that, unlike carbohydrates and even "good fats", are quickly and directly burned for energy rather than stored as body fat. MCTs have gained popularity among numerous communities including low-carb dieters, endurance athletes and those interested in cognitive improvement.
 <p>Energy cubes come individually packaged in portable environmentally friendly packaging. 
 </section>
+</div>
 <div id="relief">
 <p>"Put butter instead of sugar in your coffee. Butter lets the caffeine last longer in your body. You get a prolonged energy boost. It also tastes really really good." -Dr. Oz</p>
 </div>
@@ -153,5 +156,6 @@ $('#nutrition').nutritionLabel($.extend(
 <img id="logo" src="http://www.wantfood.co/mctwo/logo.png" />
 <p>Aenean non massa sapien. In hac habitasse platea dictumst. Maecenas sodales purus et nulla sodales aliquam. Aenean ac porttitor metus. In hac habitasse platea dictumst. Phasellus blandit turpis in leo scelerisque mollis. Nulla venenatis ipsum nec est porta rhoncus. Mauris sodales sed pharetra nisi nec consectetur. Cras elit magna, hendrerit nec consectetur in, sollicitudin vitae justo. Cras amet aliquet Aliquam ligula turpis, feugiat id fermentum malesuada, rutrum eget turpis. Mauris sodales sed pharetra nisi nec consectetur. Cras elit magna, hendrerit nec consectetur in sollicitudin vitae.</p>
 </section>
+</div>
 </body>
 </html>
