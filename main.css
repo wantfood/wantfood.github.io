@@ -817,13 +817,18 @@ input[type="submit"]:hover {
 }
 
 
-#assurance a {
+#faq {
     display: inline-block;
-    color: white;
+    /* color: white; */
     background-color: rgba(0,0,0,0.3);
     padding: 4px;
-    text-decoration: none;
+    /* text-decoration: none; */
     border-radius: 3px;
+}
+
+#assurance a {
+    color: white;
+    text-decoration: none;
 }
 
 #assurance li {
