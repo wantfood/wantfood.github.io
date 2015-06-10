@@ -12,6 +12,17 @@ var prevScrollPos = 0;
 var scrollPos = 0;
 var wantPos = 0;
 var body;
+var want;
+var scrollTimer;
+
+function wantFix() { 
+	if (scrollPos >= wantPos) {
+		body.addClass("wantscrolled");
+	}
+	else { 
+		body.removeClass("wantscrolled");
+	}		
+}
 
 function scrollListener() { 
 	if (scrollPos > 0 && prevScrollPos == 0) {
@@ -23,22 +34,19 @@ function scrollListener() {
 		body.removeClass('scrolled');
 	}
 	
-	if (scrollPos >= wantPos && prevScrollPos < wantPos) {
-		prevScrollPos = scrollPos;
-		body.addClass("wantscrolled");
-	}
-	else if (prevScrollPos > wantPos && scrollPos <= wantPos) { 
-		prevScrollPos = scrollPos;
-		body.removeClass('wantscrolled');
-	}	
+	if (scrollTimer !== null) {
+        clearTimeout(scrollTimer);        
+    }
+    scrollTimer = setTimeout(wantFix, 150, false);
 }
 
 function resizeListener() {
-	wantPos = $("#want").position().top;
+	wantPos = $(window).height() - 180 - $("#want").height();
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	body = $("body");
+	want = $("#want");
 	
 	resizeListener();
 	$(window).resize(resizeListener);
